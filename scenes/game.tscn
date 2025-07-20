@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://cd2cjsp4vyasc"]
+[gd_scene load_steps=6 format=4 uid="uid://cd2cjsp4vyasc"]
 
 [ext_resource type="PackedScene" uid="uid://xk26djicstgl" path="res://scenes/player_wizard.tscn" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://btb3dapmpky84" path="res://assets/sprites/world_tileset.png" id="3_lnu2h"]
@@ -129,14 +129,18 @@ texture = ExtResource("3_lnu2h")
 [sub_resource type="TileSet" id="TileSet_iywne"]
 sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
+normal = Vector2(0.218892, 0.975749)
+distance = -89.0454
+
 [node name="Game" type="Node2D"]
-position = Vector2(-671, -826)
+position = Vector2(-671, -825)
 
 [node name="player_wizard" parent="." instance=ExtResource("1_yqjtg")]
-position = Vector2(-283, -244)
+position = Vector2(-139, -178)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-96, -188)
+[node name="Camera2D" type="Camera2D" parent="player_wizard"]
+position = Vector2(41, -10)
 scale = Vector2(1.00314, 0.862937)
 zoom = Vector2(4, 4)
 
@@ -144,3 +148,10 @@ zoom = Vector2(4, 4)
 position = Vector2(-46, -198)
 tile_map_data = PackedByteArray("AAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAIAAAAGAAAAAAAGAAIAAAAGAAAAAAAIAAIAAAAHAAAAAAAJAAIAAAAHAAAAAAAKAAIAAAAHAAAAAAD+//7/AAAEAAIAAAACAP3/AAAEAAIAAAAFAPz/AAAEAAIAAAAJAAEAAAAEAAgAAAD//wEAAAADAAcAAAD/////AAADAAcAAAD///3/AAACAAQAAAA=")
 tile_set = SubResource("TileSet_iywne")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-110, -220)
+rotation = -2.90758
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_yqjtg")

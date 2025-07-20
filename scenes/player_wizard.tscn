@@ -1,5 +1,6 @@
-[gd_scene load_steps=131 format=3 uid="uid://xk26djicstgl"]
+[gd_scene load_steps=132 format=3 uid="uid://xk26djicstgl"]
 
+[ext_resource type="Script" uid="uid://cl4c1avvk6jkk" path="res://scenes/player_wizard.gd" id="1_443en"]
 [ext_resource type="Texture2D" uid="uid://bb21088ef6tpe" path="res://assets/sprites/BlueWizard/2BlueWizardJump/DashEffect/BlueWizardDash_00000.png" id="1_iiued"]
 [ext_resource type="Texture2D" uid="uid://d1tsm541p0bkn" path="res://assets/sprites/BlueWizard/2BlueWizardJump/DashEffect/BlueWizardDash_00001.png" id="2_443en"]
 [ext_resource type="Texture2D" uid="uid://8r04g0hcdaxr" path="res://assets/sprites/BlueWizard/2BlueWizardJump/DashEffect/BlueWizardDash_00002.png" id="3_gsgiy"]
@@ -537,18 +538,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6yudx"]
-size = Vector2(76, 176)
+size = Vector2(74.5714, 176)
 
 [node name="player_wizard" type="CharacterBody2D"]
+script = ExtResource("1_443en")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(186.5, 45.5)
+position = Vector2(-4, -46)
 scale = Vector2(0.259766, 0.263672)
 sprite_frames = SubResource("SpriteFrames_doymi")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.891747
+frame_progress = 0.212141
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
-position = Vector2(0, 21)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -40)
+scale = Vector2(0.259766, 0.263672)
 shape = SubResource("RectangleShape2D_6yudx")
