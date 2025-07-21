@@ -1,5 +1,6 @@
-[gd_scene load_steps=34 format=3 uid="uid://bmbysw73fcx6g"]
+[gd_scene load_steps=35 format=3 uid="uid://bmbysw73fcx6g"]
 
+[ext_resource type="Script" uid="uid://dh7q0tkrcpd4k" path="res://scenes/dino.gd" id="1_4s6ie"]
 [ext_resource type="Texture2D" uid="uid://co3lfp2vnmyu4" path="res://assets/dinoCharactersVersion1/sheets/DinoSprites - mort.png" id="1_j5dwh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4s6ie"]
@@ -239,13 +240,14 @@ animations = [{
 size = Vector2(86, 94)
 
 [node name="Dino" type="CharacterBody2D"]
+script = ExtResource("1_4s6ie")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-105, -99)
 scale = Vector2(10.5833, 10.75)
 sprite_frames = SubResource("SpriteFrames_itt2r")
 animation = &"idle"
-frame_progress = 0.441858
+frame_progress = 0.0603947
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-87, -93)
